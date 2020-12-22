@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html charset="utf-8" lang="{{ .Site.LanguageCode }}">
 <head>
     <title>{{ .Params.Title | default "Title" }}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- allows you to set meta at page-level or site-level meta.description/meta.keywords if you want them-->
+    <meta name="description" content="{{ if .Params.metaDescription }}{{ .Params.metaDescription }}{{ else if .Site.Params.meta.description }}{{ .Site.Params.meta.description }}{{ else }}{{ end }}" />
+    <meta name="keywords" content="{{ if .Params.metaKeywords }}{{ .Params.metaKeywords }}{{ else if .Site.Params.meta.keywords }}{{ .Site.Params.meta.keywords }}{{ else }}{{ end }}" />
     <link rel="stylesheet" href="{{ "assets/css/main.css" | absURL }}"/>
     <noscript><link rel="stylesheet" href="{{ "assets/css/noscript.css" | absURL }}"/></noscript>
     <style>

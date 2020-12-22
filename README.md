@@ -44,6 +44,22 @@ theme = "dimension"
 
 to `config.toml` file in your Hugo root directory and change params fields.
 
+## SEO meta description and keywords
+If you would like to set metadata keywords or descriptions, Just set in `config.toml`:
+
+```
+[params.meta]
+    description = "example meta description for SEO"
+    keywords = "example, tags, for, SOE"
+```
+
+or per-page in the .md files:
+
+```
+metaDescription = "example meta description for SEO"
+metaKeywords = "example, tags, for, SOE"
+```
+
 **NOTE:** All the main page styling and configuration can be done by creating `_index.md` pages in the `content` folder and subdirectories. This choice was made to allow the use of any headless CMS (e.g. netlify) for total customization.
 
 ## Post archetype
